@@ -41,14 +41,14 @@ class Application (Frame):
         self.button_equal.grid(row = 5, column = 1 ,columnspan = 2)
         self.pack()
 
-        #define function buttons (+, -, /, *)
+        #define functions
         def click(number):
             curr = entryBox.get()
             entryBox.delete(0, END)
             entryBox.insert(0, str(curr) + str(number))
         def clear():
             entryBox.delete(0, END)
-
+#execute application
 root = tk.Tk()
 root.title("Calculator")
 app = Application(root)
