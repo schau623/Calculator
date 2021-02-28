@@ -5,7 +5,7 @@ Current Functions:
       - Subtraction    
       - Division  
       - Multiplication  
-      - Power/Exponent
+      - Power/Exponent  
       - Clear Screen  
 To Add:  
       - History  
