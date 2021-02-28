@@ -50,6 +50,14 @@ class Application (Frame):
             first_num = int(firstNumber)
             entryBox.delete(0, END)
             
+        def power():
+            firstNumber = entryBox.get()
+            global math
+            math = "power"
+            global first_num #Global declaration of first num so we can use it outside this function.
+            first_num = int(firstNumber)
+            entryBox.delete(0, END)
+            
         def equal():
             secondNumber = entryBox.get()
             entryBox.delete(0, END)
@@ -61,7 +69,10 @@ class Application (Frame):
                 entryBox.insert(0, first_num * int(secondNumber))
             if math == "dividing":
                 entryBox.insert(0, first_num / int(secondNumber))
+            if math == "power":
+                entryBox.insert(0, pow(first_num, int(secondNumber)))
             
+        
             
         #define number buttons (1, 2, 3...)
         self.button_0 = Button(self, text = "0", padx = 40, pady = 20, command = lambda: click(0))
@@ -80,6 +91,7 @@ class Application (Frame):
         self.button_divide = Button(self, text = "÷", padx = 41 , pady = 20, command = divide)
         self.button_equal = Button(self, text = "=", padx = 91, pady = 20, command = equal)
         self.button_clear = Button(self, text = "CLEAR", padx = 79, pady = 20, command = clear)
+        self.button_power = Button(self, text = "^", padx = 40, pady = 20, command = power)
         #number button placements
         self.button_1.grid(row = 3, column = 0)
         self.button_2.grid(row = 3, column = 1)
@@ -100,6 +112,7 @@ class Application (Frame):
         self.button_subtract.grid(row = 6, column = 0)
         self.button_multiply.grid(row = 6, column = 1)
         self.button_divide.grid(row = 6, column = 2)
+        self.button_power.grid(row = 7, column = 1)
         self.pack()
 
 
